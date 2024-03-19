@@ -1,42 +1,48 @@
+:root 
+{
+  --FullSliderBar: hsl(174, 77%, 80%);
+--SliderBackground: hsl(174, 86%, 45%);
+--DiscountBackground: hsl(14, 92%, 95%);
+--DiscountText: hsl(15, 100%, 70%);
+--CTAText: hsl(226, 100%, 87%);
+
+--PricingComponentBackground: hsl (0, 0%, 100%);
+--MainBackground: hsl(230, 100%, 99%);
+--EmptySliderBar: hsl(224, 65%, 95%);
+--ToggleBackground: hsl(223, 50%, 87%);
+--Text: hsl(225, 20%, 60%);
+--TextCTABackground: hsl(227, 35%, 25%);
+}
+
+
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100vw;
+  min-height: fit-content;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+html {
+  font-size: 15px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+body {
+  margin: 0;
+  font-family:"Manrope", sans-serif; ;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+p {
+  line-height: 1.6;
 }
 
-.card {
-  padding: 2em;
+* {
+  box-sizing: border-box;
 }
 
-.read-the-docs {
-  color: #888;
+*:first-child {
+  margin-top: 0;
 }
+
+*:last-child {
+  margin-bottom: 0;
+}
+
+
