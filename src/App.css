@@ -6,7 +6,7 @@
 --DiscountText: hsl(15, 100%, 70%);
 --CTAText: hsl(226, 100%, 87%);
 
---PricingComponentBackground: hsl (0, 0%, 100%);
+--PricingComponentBackground: hsl(0, 0%, 100%);
 --MainBackground: hsl(230, 100%, 99%);
 --EmptySliderBar: hsl(224, 65%, 95%);
 --ToggleBackground: hsl(223, 50%, 87%);
@@ -32,6 +32,10 @@ body {
   background-position: top left;
   background-repeat: no-repeat;
   background-size: cover;
+}
+#root > * {
+  margin-left: auto;
+  margin-right: auto;
 }
 
 p {

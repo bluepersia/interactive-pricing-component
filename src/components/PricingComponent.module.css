@@ -1,3 +1,68 @@
+
+.pricingComponent {
+    text-align: center;
+    padding: 0 6.6% 8em;
+    max-width: 700px;
+}
+
+.header {
+    background-image: url(../images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 6.6em 0% 6em;
+}
+
+.title {
+    color: var(--TextCTABackground);
+}
+.subtitle {
+    color: var(--Text);
+    font-weight:normal;
+}
+
+.card {
+    background-color:var(--PricingComponentBackground);
+    border-radius: 8px;
+    padding: 3.3em 7%;
+    color: var(--Text);
+}
+
+.viewCount {
+    text-transform: uppercase;
+    letter-spacing: .2em;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto;
+}
+
+.viewCount {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.sliderWrapper {
+    grid-column: 1;
+    grid-row: 2;
+    margin: 3em 0;
+}
+
+.pricing {
+    grid-column: 1;
+    grid-row: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pricing span {
+    font-size: 2.5rem;
+    color: var(--TextCTABackground);
+    margin-right: .3em;
+}
+
 .sliderWrapper {
     width: 100%;
     height: .66em;
@@ -9,9 +74,10 @@
 
 .sliderBar {
     height: 100%;
-    position: relative;
+    position: absolute;
     left: 0px;
     top: 0px;
+    transform-origin: 0px 0px;
     background-color: var(--FullSliderBar);
     z-index: 0;
   }
@@ -23,6 +89,7 @@
     background: transparent;
     position: absolute;
     top: 0px;
+    left: 0px;
     z-index: 1;
   }
 
@@ -31,25 +98,180 @@
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 2.6em;
-    height: 2.6em;
-    border-radius: 50%; 
-    background: var(--SliderBackground);
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
   }
 
  
-  
-  .slider::-moz-range-thumb {
+
+
+  .slider::-moz-range-thumb, .slider::-webkit-slider-thumb {
+    background-color: var(--SliderBackground);
+    background-image: url(../images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
     width: 2.6em;
     height: 2.6em;
     border-radius: 50%;
-    background: var(--SliderBackground);
     cursor: pointer;
     position: relative;
     z-index: 2;
   }
 
 
+
+  .billing {
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2.66em;
+    gap: 1em;
+  }
+
+
+  .sliderBilling 
+  {
+    -webkit-appearance: none;
+    background-color: var(--ToggleBackground);
+    max-width: 40px;
+    border-radius:100px;
+    padding: 0.3em;
+  }
+
+  .sliderBilling::-moz-range-thumb, .sliderBilling::-webkit-slider-thumb
+  {
+    width: 1em;
+    height: 1em;
+  }
+
+  .billingText {
+    position: relative;
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  .billingTextYearly
+   {
+    padding-right: 1em;
+   }
+  .discount {
+    position: absolute;
+    top: 50%;;
+    display: none;
+    background-color: var(--DiscountBackground);
+    color: var(--DiscountText);
+    border-radius: 14px;
+    padding: .2em .4em;
+    transform:translateY(-50%);
+
+    left: 100%;
+  }
+
+  .discount.mobile {
+    display: inline-block;
+  }
+  
+
+  .cardFooter {
+    border-top: 1px solid var(--EmptySliderBar);
+    padding-top: 3.66em;
+  }
+
+
+  .listFeatures {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.3em;
+  }
+  .featuresItem {
+    position: relative;
+    padding-left: 1em;
+    width: fit-content;
+  }
+
+  .featuresItem::before{
+    content: '';
+    background-image: url(../images/icon-check.svg);
+    width: 9px;
+    height: 8px;
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    left: 0px;
+  }
+
+  .btnStartTrial 
+  {
+    padding: 1em 3em;
+    border-radius: 24px;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: var(--TextCTABackground);
+    color: rgba(255, 255, 255, 80%);
+    border:none;
+    margin-top: 2em;
+  }
+
+  @media (min-width: 786px)
+  {
+
+    .grid {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        align-items: center;
+    }
+
+    .viewCount {
+        grid-column: 1;
+        grid-row: 1;
+        margin-bottom: 0;
+    }
+
+    .pricing 
+    {
+        grid-column: 2 / -1;
+        grid-row:  1;
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+
+    .sliderWrapper {
+        grid-column: 1 / -1;
+        grid-row:  2;
+    }
+
+    .billing {
+        grid-column: 1 / -1;
+        grid-row: 3;
+    }
+
+
+    .discount.mobile {
+        display: none;
+    }
+
+    .discount.tablet.desktop 
+    {
+        display: inline-block;
+        width: max-content;
+    }
+
+
+    .cardFooter {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        text-align-last: left;
+    }
+
+    .listFeatures {
+        align-items: start;
+    }
+    .btnStartTrial {
+        margin-top: 0;
+    }
+
+    
+
+  }
