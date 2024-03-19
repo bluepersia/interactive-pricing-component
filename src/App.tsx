@@ -1,7 +1,12 @@
 import './App.css';
+import PricingComponent from './components/PricingComponent';
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <PricingComponent />
+    </>
+  );
 }
 
 export default App;

@@ -26,7 +26,12 @@ html {
 
 body {
   margin: 0;
-  font-family:"Manrope", sans-serif; ;
+  font-family:"Manrope", sans-serif; 
+  background-color: var(--MainBackground);
+  background-image: url(./images/bg-pattern.svg);
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 p {
