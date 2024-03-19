@@ -1,3 +1,23 @@
+.pricingComponent {
+    text-align: center;
+}
+
+.header {
+    background-image: url(../images/pattern-circles.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 12.6em 13.3% 9.13em;
+}
+
+.title {
+    color: var(--TextCTABackground);
+}
+.subtitle {
+    color: var(--Text);
+    font-weight:normal;
+}
+
+
 .sliderWrapper {
     width: 100%;
     height: .66em;
@@ -31,22 +51,19 @@
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 2.6em;
-    height: 2.6em;
-    border-radius: 50%; 
-    background: var(--SliderBackground);
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
   }
 
  
-  
-  .slider::-moz-range-thumb {
+
+
+  .slider::-moz-range-thumb, .slider::-webkit-slider-thumb {
+    background-color: var(--SliderBackground);
+    background-image: url(../images/icon-slider.svg);
+    background-repeat: no-repeat;
+    background-position: center center;
     width: 2.6em;
     height: 2.6em;
     border-radius: 50%;
-    background: var(--SliderBackground);
     cursor: pointer;
     position: relative;
     z-index: 2;

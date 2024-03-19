@@ -17,7 +17,7 @@ export default function PricingComponent(): JSX.Element {
       <header className={styles.header}>
         <h1 className={styles.title}>Simple, traffic-based pricing</h1>
         <h3 className={styles.subtitle}>
-          Sign-up for our 30-day trial. No credit card required
+          Sign-up for our 30-day trial. No credit card required.
         </h3>
       </header>
 
