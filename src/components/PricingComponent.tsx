@@ -22,13 +22,11 @@ export default function PricingComponent(): JSX.Element {
       </header>
 
       <main className={styles.card}>
-        <header className={styles.cardHeader}>
+        <div className={styles.grid}>
           <p className={styles.viewCount}>100K pageviews</p>
           <p className={styles.pricing}>
             <span>$16.00</span>/month
           </p>
-        </header>
-        <main className={styles.cardMain}>
           <div className={styles.sliderWrapper}>
             <input
               type='range'
@@ -43,27 +41,34 @@ export default function PricingComponent(): JSX.Element {
               style={{ width: `${sliderVal}%` }}
             ></div>
           </div>
-
-          <div className={styles.billing}>
-            <p className={styles.billingText}>Monthly Billing</p>
-            <input
-              type='range'
-              min={0}
-              max={1}
-              value={billingVal}
-              onChange={handleBillingChange}
-              className={styles.sliderBilling}
-            />
-            <p className={styles.billingText}>
-              Yearly Billing <span>25% discount</span>
-            </p>
-          </div>
-        </main>
+        </div>
+        <div className={styles.billing}>
+          <p className={styles.billingText}>Monthly Billing</p>
+          <input
+            type='range'
+            min={0}
+            max={1}
+            value={billingVal}
+            onChange={handleBillingChange}
+            className={styles.sliderBilling}
+          />
+          <p className={styles.billingText + ' ' + styles.billingTextYearly}>
+            Yearly Billing{' '}
+            <span className={styles.discount + ' ' + styles.mobile}>-25%</span>{' '}
+            <span
+              className={
+                styles.discount + ' ' + styles.tablet + ' ' + styles.desktop
+              }
+            >
+              25% discount
+            </span>
+          </p>
+        </div>
         <footer className={styles.cardFooter}>
           <ul className={styles.listFeatures}>
-            <li className={styles.listItem}>Unlimited websites</li>
-            <li className={styles.listItem}>100% data ownership</li>
-            <li className={styles.listItem}>Email reports</li>
+            <li className={styles.featuresItem}>Unlimited websites</li>
+            <li className={styles.featuresItem}>100% data ownership</li>
+            <li className={styles.featuresItem}>Email reports</li>
           </ul>
 
           <button className={styles.btnStartTrial}>Start my trial</button>
