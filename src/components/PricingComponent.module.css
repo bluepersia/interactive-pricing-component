@@ -114,10 +114,21 @@
     cursor: pointer;
     position: relative;
     z-index: 2;
+    transition: background-color 300ms;
+    box-shadow: 0px 0px 10px var(--SliderBackground);
+    border: none;
   }
 
+  .sliderWrapper:hover .slider::-moz-range-thumb, .sliderWrapper:hover .slider::-webkit-slider-thumb
+{
+    background-color: var(--FullSliderBar);
 
+}
 
+.sliderWrapper:active .slider::-moz-range-thumb, .sliderWrapper:active .slider::-webkit-slider-thumb 
+{
+    background-color: var(--SliderDark);
+}
   .billing {
     display:flex;
     align-items: center;
@@ -127,6 +138,10 @@
   }
 
 
+.sliderBillingWrapper {
+    cursor: pointer;
+}
+
   .sliderBilling 
   {
     -webkit-appearance: none;
@@ -134,13 +149,24 @@
     max-width: 40px;
     border-radius:100px;
     padding: 0.3em;
+    pointer-events: none;
   }
 
   .sliderBilling::-moz-range-thumb, .sliderBilling::-webkit-slider-thumb
   {
     width: 1em;
     height: 1em;
+    background-color: white;
+    border:none;
   }
+
+  .sliderBillingWrapper:hover .sliderBilling 
+  {
+    background-color: var(--SliderBackground);
+  }
+
+
+
 
   .billingText {
     position: relative;
@@ -211,6 +237,7 @@
     color: rgba(255, 255, 255, 80%);
     border:none;
     margin-top: 2em;
+    cursor: pointer;
   }
 
   @media (min-width: 786px)

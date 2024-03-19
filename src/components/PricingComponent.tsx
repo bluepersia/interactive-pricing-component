@@ -44,14 +44,22 @@ export default function PricingComponent(): JSX.Element {
         </div>
         <div className={styles.billing}>
           <p className={styles.billingText}>Monthly Billing</p>
-          <input
-            type='range'
-            min={0}
-            max={1}
-            value={billingVal}
-            onChange={handleBillingChange}
-            className={styles.sliderBilling}
-          />
+          <div
+            onClick={(e: React.MouseEvent) => {
+              e.stopPropagation();
+              setBillingVal((val) => (val === 0 ? 1 : 0));
+            }}
+            className={styles.sliderBillingWrapper}
+          >
+            <input
+              type='range'
+              min={0}
+              max={1}
+              value={billingVal}
+              onChange={handleBillingChange}
+              className={styles.sliderBilling}
+            />
+          </div>
           <p className={styles.billingText + ' ' + styles.billingTextYearly}>
             Yearly Billing{' '}
             <span className={styles.discount + ' ' + styles.mobile}>-25%</span>{' '}
